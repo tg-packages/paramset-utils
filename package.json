@@ -1,0 +1,7 @@
+{
+  "name": "paramset-utils",
+  "version": "1.0.0",
+  "description": "Runtime utilities for paramset packages",
+  "main": "index.js",
+  "license": "MIT"
+}
