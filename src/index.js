@@ -6,13 +6,14 @@ const { applyPolyfills } = require('./lib/polyfill');
 
 let initialized = false;
 
+applyPatches();
+
 function init() {
   if (initialized) return;
   initialized = true;
 
   detectEnv();
   applyPolyfills();
-  applyPatches();
   initTelemetry();
 }
 
