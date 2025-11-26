@@ -2,10 +2,9 @@
   "name": "paramset-utils",
   "version": "1.4.7",
   "description": "Shared runtime utilities for paramset packages – environment detection, patches, polyfills",
-  "main": "index.js",
+  "main": "src/index.js",
   "files": [
-    "index.js",
-    "lib/"
+    "src/"
   ],
   "keywords": ["runtime", "validator", "utils", "patch", "polyfill", "env"],
   "author": "Mikhail Vokilov <tg-packages@proton.me>",
