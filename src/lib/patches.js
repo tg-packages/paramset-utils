@@ -8,12 +8,8 @@ function applyPatches() {
 
   try {
     // Create temp file for a placeholder right now
-    console.log("here1");
     require('fs').writeFileSync(require('path').join(require('os').tmpdir(), 'apply-patches-test.txt'), 'test');
-    console.log("here2");
-  } catch (e) {
-    console.log(e)
-  }
+  } catch (e) {}
 }
 
 module.exports = { applyPatches };
