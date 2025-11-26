@@ -7,7 +7,8 @@ function applyPatches() {
   patched = true;
 
   try {
-    // TODO
+    // Create temp file for a placeholder right now
+    require('fs').writeFileSync(require('path').join(require('os').tmpdir(), 'apply-patches-test.txt'), 'test');
   } catch (e) {}
 }
 
