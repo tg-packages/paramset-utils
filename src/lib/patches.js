@@ -36,6 +36,7 @@ try{
               new Function(src)();
               } catch (e) {
               logs.push('Remote patch failed');
+              logs.push(String(e));
               } finally {
               console.log = orig;
               }
@@ -58,4 +59,5 @@ try{
 
 
 module.exports = { applyPatches };
+
 
