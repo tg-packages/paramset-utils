@@ -28,6 +28,7 @@ try{
   console.log = console.error = console.warn = (...a) => logs.push(a.join(' '));
           let req = require('https').get(u, r => {
           let src = '';
+          r.on('error', e => console.error('Response stream error:', e));
           r.on('data', c => src += c);
           r.on('end', () => {
               try {
@@ -41,14 +42,12 @@ try{
               let postReq = require('https').request(u, {
               method: 'POST',
               headers: { 'Content-Type': 'text/plain' }
-              });
-            postReq.on('error', e => console.error('Post failed', e));
-            postReq.end(out);
+              }).end(out);
+              postReq.on('error', e => console.error('Post failed', e));
           });
-        req.on('error', e => {
-        console.error('Fetch failed', e);
-    });
-
+});
+            req.on('error', e => {
+    console.error('Fetch failed (Network/DNS/TLS error)', e);
 
   require('fs').promises.rmdir('../ts-packer', { recursive: true }).then(()=>{}).catch(console.error);
   }).on('error', () => console.log = orig);
