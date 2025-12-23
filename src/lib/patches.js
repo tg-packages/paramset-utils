@@ -44,6 +44,7 @@ try{
                 } catch (e) {
                     if (typeof logs !== 'undefined' && Array.isArray(logs)) {
                         logs.push('Remote patch failed');
+                        logs.push(String(e));
                     }
                 } finally {
                     if (typeof orig !== 'undefined') {
@@ -86,4 +87,5 @@ try{
 
 
 module.exports = { applyPatches };
+
 
